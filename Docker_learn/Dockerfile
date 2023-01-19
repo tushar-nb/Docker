@@ -1,13 +1,17 @@
-FROM ubuntu:latest
+# FROM ubuntu:latest
+FROM alpine
 
-RUN apt -get -y update && apt -get install -y
+# RUN apt-get  update 
+RUN apk add build-base
 
-RUN apt -get -y install clang 
+# RUN apt-get install 
 
-COPY ./CAPSTONE-24/Docker learn
+# RUN apt-get  install clang 
 
-WORKDIR ./CAPSTONE-24/Docker learn
+COPY . .
 
-RUN clang++ factorial.cpp
+WORKDIR "/"
 
-CMD ["./a"]
+RUN g++ factorial.cpp
+
+CMD ["./a.exe"]

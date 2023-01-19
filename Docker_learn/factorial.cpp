@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int num,fact=1;
+    int num=5,fact=1;
     cout<<"Enter the number to find the factorial: ";
     cin>>num;
     for(int i=num;i>0;i--)
